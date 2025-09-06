@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/tailwind.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+  </head>
+  <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <nav class="bg-white shadow">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="{% url 'main:index' %}" class="text-xl font-bold text-blue-600">Site</a>
+        <div class="space-x-6">
+          <a href="{% url 'main:index' %}" class="hover:text-blue-500">Главная</a>
+          <a href="{% url 'main:about' %}" class="hover:text-blue-500">О нас</a>
+          <a href="{% url 'main:contact' %}" class="hover:text-blue-500">Контакты</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container mx-auto px-4 py-8 flex-grow">
+      {% block content %}{% endblock %}
+    </main>
+
+
+    <footer class="bg-white shadow py-4 text-center text-sm text-gray-500">
+      &copy; {% now "Y" %} Мой сайт
+    </footer>
+  </body>
+</html>
