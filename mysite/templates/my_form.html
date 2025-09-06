@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Формы{% endblock %}
+{% block content %}
+  <div class="container mx-auto my-4 border border-gray-300
+rounded-md shadow-md p-4">
+    <form method="post">
+      {% csrf_token %}
+      <table class="table-auto w-full">
+        {{ form }}
+      </table>
+    </form>
+  </div>
+{% endblock %}

@@ -6,4 +6,9 @@
     <p class="mt-4 text-lg">Это главная страница сайта на Django с Tailwind как и обещал.</p>
     <a href="{% url 'main:about' %}" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Получить 2</a>
   </div>
+  <div class="row">
+    <div class="col-md-12 text-center text-gray-800">
+      <div>{{ my_text }}</div>
+    </div>
+  </div>
 {% endblock %}

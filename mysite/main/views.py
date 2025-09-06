@@ -1,10 +1,17 @@
 from django.shortcuts import render
-
+from .forms import UserForm
 def index(request):
-    return render(request, 'index.html')
+    my_text = 'Прошли формы',
+    context = {"my_text": my_text}
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html')
+
+def my_form(request):
+    my_form = UserForm()
+    context = {"form": my_form}
+    return render(request, 'my_form.html', context)
 
 def contact(request):
     if request.method == 'POST':
